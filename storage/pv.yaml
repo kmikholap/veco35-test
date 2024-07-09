@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /zfs-r10-pool/nfs_vm_iso
+    server: 192.168.6.10
+  persistentVolumeReclaimPolicy: Retain
